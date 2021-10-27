@@ -7,10 +7,10 @@ const USERNAME_KEY ="username";
 
 function onLoginSubmit(event){
   event.preventDefault();
-  localStorage.setItem(USERNAME_KEY,username);
   loginForm.classList.add(HIDDEN_CLASSNAME);
-  console.log(username);
-  paintGreeting();
+  const username = loginInput.value;
+  localStorage.setItem(USERNAME_KEY, username); 
+  paintGreetings();
 }
 function paintGreetings(){
   const username = localStorage.getItem(USERNAME_KEY);
@@ -26,3 +26,4 @@ if(savedUsername === null){
 }else{
   paintGreetings()
 }
+
